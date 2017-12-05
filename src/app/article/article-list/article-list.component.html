@@ -20,7 +20,7 @@
       <div class="col-sm-12">
           <div class="post-item-container" *ngFor="let post of postList">
               <h4>
-                  <a [routerLink]="['/article/detail',post.postId]">{{post.title}}</a>
+                  <a [routerLink]="['/articles/detail',post.title]">{{post.title}}</a>
               </h4>
               <p class="{{post.isfamous}}">
                   <i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;{{post.likedTimes}} &nbsp;&nbsp;&nbsp;&nbsp;

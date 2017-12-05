@@ -9,8 +9,9 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class ArticleService {
-  public postListURL = 'mock-data/article-mock.json';
+  public postListURL = 'mock-data/articles-mock.json';
   public postListSearchURL = 'mock-data/article-search-mock.json';
+  public postDetailURL = 'mock-data/article-mock.json';
 
   constructor(public http: Http) { }
   public getPostList(searchText: string, page: number = 1): Observable<Article[]> {
@@ -39,7 +40,11 @@ export class ArticleService {
   public addPost(user: any) {
 
   }
-
+  public getPost(id: number): Observable<Article> {
+    return 	this.http
+          .get(this.postDetailURL)
+              .map((res: Response) => res.json());
+}
   public search() {
   }
 }

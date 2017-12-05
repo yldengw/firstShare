@@ -1,0 +1,11 @@
+{
+    "app":{
+        "welcome":"Welcome",
+        "logout":"Logout",
+        "login":"Login",
+        "amap":"Amap",
+        "articles":"Articles",
+        "echart":"Echart",
+        "editor": "Editor"
+    }
+}

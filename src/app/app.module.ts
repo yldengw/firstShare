@@ -15,7 +15,11 @@ import { NeedAuthGuard } from './shared/service/no-auth.directive';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { EditorComponent } from './editor/editor.component';
 import { AmapComponent } from './amap/amap.component';
-
+import { TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
+import { Http } from '@angular/http';
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,12 @@ import { AmapComponent } from './amap/amap.component';
     SharedModule,
     AppRoutingModule,
     CoreModule,
-    QuillEditorModule
+    QuillEditorModule,
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+    }),
   ],
   providers: [NeedAuthGuard],
   bootstrap: [AppComponent]

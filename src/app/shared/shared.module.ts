@@ -6,11 +6,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from '../core/core.module';
 import { UserService } from './service/user.service';
+import { TranslateModule } from 'ng2-translate';
 
 @NgModule({
   imports: [
     CommonModule,
-    CoreModule
+    CoreModule,
+    TranslateModule
   ],
   declarations: [HeaderComponent, UserLoginComponent, ShowAuthedDirective],
   exports: [
