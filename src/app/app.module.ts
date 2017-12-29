@@ -1,3 +1,5 @@
+import { FormComponent } from './form/form.component';
+import { RepeatPasswordDirective } from './shared/directive/repeat-password.directive';
 import { QuillEditorModule } from 'ng2-quill-editor';
 import { AuthGuard } from './shared/auth-guard.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +19,11 @@ import { EditorComponent } from './editor/editor.component';
 import { AmapComponent } from './amap/amap.component';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 import { Http } from '@angular/http';
+import { DateComponent } from './date/date.component';
+import {KSSwiperModule} from 'angular2-swiper';
+import { UploadComponent } from './upload/upload.component';
+import { CommonModule } from '@angular/common';
+import { TableComponent } from './table/table.component';
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
 }
@@ -28,15 +35,22 @@ export function createTranslateLoader(http: Http) {
     ChartComponent,
     EChartOptionDirective1,
     EditorComponent,
-    AmapComponent
+    AmapComponent,
+    DateComponent,
+    UploadComponent,
+    FormComponent,
+    RepeatPasswordDirective,
+    TableComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
+    CommonModule,
     AppRoutingModule,
     CoreModule,
     QuillEditorModule,
+    KSSwiperModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),

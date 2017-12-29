@@ -1,8 +1,9 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
-import { GrowlModule,  PaginatorModule, PanelModule, DialogModule, SelectButton, SelectButtonModule} from 'primeng/primeng';
-import {MenubarModule, MenuItem} from 'primeng/primeng';
+import { ReactiveFormsModule } from '@angular/forms';
+import { GrowlModule, MenubarModule,
+  CalendarModule, PaginatorModule, PanelMenuModule, DialogModule, SelectButtonModule, FileUploadModule } from 'primeng/primeng';
 @NgModule({
   declarations: [
   ],
@@ -11,7 +12,9 @@ import {MenubarModule, MenuItem} from 'primeng/primeng';
     HttpModule
   ],
   exports: [
-    GrowlModule, MenubarModule, PaginatorModule, PanelModule, DialogModule, SelectButtonModule
+    GrowlModule
+    , MenubarModule, ReactiveFormsModule,
+     CalendarModule, PaginatorModule, PanelMenuModule, DialogModule, SelectButtonModule, FileUploadModule
   ],
   providers: []
 })

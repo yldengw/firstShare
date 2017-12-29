@@ -1,3 +1,5 @@
+import { FormComponent } from './form/form.component';
+import { UploadComponent } from './upload/upload.component';
 import { AmapComponent } from './amap/amap.component';
 import { AuthGuard } from './shared/auth-guard.directive';
 import { UserLoginComponent } from './user/user-login/user-login.component';
@@ -7,6 +9,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NeedAuthGuard } from './shared/service/no-auth.directive';
 import { EditorComponent } from './editor/editor.component';
+import { DateComponent } from './date/date.component';
+import { TableComponent } from './table/table.component';
 
 const appRoutes: Routes = [
 
@@ -39,12 +43,28 @@ const appRoutes: Routes = [
     {
         path: 'amap',
         component: AmapComponent
+    },
+    {
+        path: 'date',
+        component: DateComponent
+    },
+    {
+        path: 'upload',
+        component: UploadComponent
+    },
+    {
+        path: 'forms',
+        component: FormComponent
+    },
+    {
+        path: 'tables',
+        component: TableComponent
     }
 ];
 
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, {'useHash': true})],
     exports: [RouterModule]
 })
 

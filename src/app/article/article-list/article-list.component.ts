@@ -13,7 +13,7 @@ import { ArticleService } from '../article.service';
 })
 export class ArticleListComponent implements OnInit {
   public itemsPerPage = 5;
-  public totalRecords = 11;
+  public totalRecords = 18;
   public currentPage = 1;
   public offset = 0;
   public end = 0;

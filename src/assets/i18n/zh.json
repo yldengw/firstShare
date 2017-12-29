@@ -6,6 +6,12 @@
         "amap":"Amap",
         "articles":"Articles",
         "echart":"Echart",
-        "editor": "Editor"
+        "editor": "Editor",
+        "dashboard": "dashboard",
+        "UIElements": "UIElements",
+        "Forms": "Forms",
+        "Tables": "Tables",
+        "Date": "Date",
+        "Upload": "Upload"
     }
 }

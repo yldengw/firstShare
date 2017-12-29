@@ -20,7 +20,7 @@
                             <a routerLink="/dashboard" [routerLinkActive]="['active','somevalue']">
                                 <span class="badge badge-success">26</span>
                                 <span class="sidenav-icon icon icon-home"></span>
-                                <span class="sidenav-label">dashboard</span>
+                                <span class="sidenav-label">{{'app.dashboard' | translate}}</span>
                             </a>
                         </li>
                         <li class="sidenav-item has-subnav active" >
@@ -51,33 +51,49 @@
                         </li>
                         <li class="sidenav-heading">Components</li>
                         <li class="sidenav-item has-subnav">
-                            <a href="#" aria-haspopup="true">
+                            <a  class="nav-header collapsed" routerLinkActive="active" aria-haspopup="true" style="cursor:pointer" (click)="changeSider()">
                                 <span class="sidenav-icon icon icon-briefcase"></span>
-                                <span class="sidenav-label">UI Elements</span>
+                                <span class="sidenav-label">{{'app.UIElements' | translate}}</span>
                             </a>
-    
+
+                             <ul  class="nav nav-list secondmenu" *ngIf="collapse">
+                                    <li class="sidenav-item has-subnav">
+                                            <a routerLink="/forms" aria-haspopup="true">
+                                                <span class="sidenav-icon icon icon-edit"></span>
+                                                <span class="sidenav-label">{{'app.Forms' | translate}}</span>
+                                            </a>
+                                    </li>
+                                    <li class="sidenav-item has-subnav">
+                                        <a routerLink="/tables" aria-haspopup="true">
+                                            <span class="badge badge-danger">New</span>
+                                            <span class="sidenav-icon icon icon-list"></span>
+                                            <span class="sidenav-label">{{'app.Tables' | translate}}</span>
+                                        </a>
+                                    </li>
+                                    <li class="sidenav-item has-subnav">
+                                            <a routerLink="/date" aria-haspopup="true">
+                                                <span class="sidenav-icon icon icon icon-list"></span>
+                                                <span class="sidenav-label">{{'app.Date' | translate}}</span>
+                                            </a>
+                                    </li>
+                                    <li class="sidenav-item has-subnav">
+                                            <a routerLink="/upload" aria-haspopup="true">
+                                                <span class="sidenav-icon icon icon icon-list"></span>
+                                                <span class="sidenav-label">{{'app.Upload' | translate}}</span>
+                                            </a>
+                                    </li>
+                            </ul> 
                         </li>
-                        <li class="sidenav-item has-subnav">
-                            <a href="#" aria-haspopup="true">
-                                <span class="sidenav-icon icon icon-edit"></span>
-                                <span class="sidenav-label">Forms</span>
-                            </a>
-                        </li>
-                        <li class="sidenav-item has-subnav">
-                            <a href="#" aria-haspopup="true">
-                                <span class="badge badge-danger">New</span>
-                                <span class="sidenav-icon icon icon-list"></span>
-                                <span class="sidenav-label">Tables</span>
-                            </a>
-                        </li>
-                        <li class="sidenav-item has-subnav">
+                      
+                        <!-- <li class="sidenav-item has-subnav">
                             <a href="#" aria-haspopup="true">
                                 <span class="badge badge-danger">New</span>
                                 <span class="sidenav-icon icon icon-pie-chart"></span>
                                 <span class="sidenav-label">Charts</span>
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
+                    <!-- <app-tree [treelists]="menu"></app-tree> -->
                 </nav>
             </div>
         </div>
