@@ -5,7 +5,6 @@ import { ArticleDetailComponent } from './article-detail.component';
 describe('ArticleDetailComponent', () => {
   let component: ArticleDetailComponent;
   let fixture: ComponentFixture<ArticleDetailComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ArticleDetailComponent ]

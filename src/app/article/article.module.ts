@@ -7,10 +7,12 @@ import { CommonModule } from '@angular/common';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { RouterModule } from '@angular/router';
 import { ArticleService } from './article.service';
+import { QuillEditorModule } from 'ng2-quill-editor';
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    QuillEditorModule,
     RouterModule.forChild(articleRoutes)
   ],
   declarations: [

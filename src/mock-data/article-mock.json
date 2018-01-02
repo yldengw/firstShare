@@ -141,7 +141,16 @@
         "readTimes":999999,
         "commentTimes":99999,
         "title":"UnitTest",
-        "text":"<p></p>"
+        "text":"web控制器层的代码往往由前端浏览器调用，所以很难做单元测试，但是根据质量要求，单元测试需要覆盖率，我们也可以对web控制器层做单元测试，这就需要引入spring的：org.springframework.test.web.servlet.MockMvc。<p>首先，为了简单起见，我们先将Service层用mockito来mock掉：</p><p>UserService userService = mock(UserService.class);</p><p>// ... mock代码<p>然后，new一个控制器出来，并注入mock后的Service：<p>UserCtrl userCtrl = new UserCtrl ();</p><p>userCtrl.setUserService(userService);</p><p>最后，得到一个mock后的控制器：</p><p>MockMvc mockMvc = standaloneSetup(userCtrl).build();</p><p>这样，这个mockMvc 就可以用于测试了。</p><p>例如测试一个post请求：</p><p>// 首先创建一个表单对象：<p><p>UserForm form = new UserForm();</p><p> form.setUsername('foo');</p><p>form.setPassword('123456Abcabc');</p><p>// 序列化为json字符串</p><p>String json = gson.toJson(form);</p><p> // 关键点，在执行时，可以在UserCtrl中添加断点，查看debug的走势</p><p> mockMvc.perform(post('/user')</p><p> .characterEncoding('UTF-8')</p><p>.contentType(MediaType.APPLICATION_JSON)</p><p>.content(json.getBytes()))</p><p>.andExpect(status().isOk());</p><p>// 测试校验不通过的情况</p><p>form.setUsername(null);</p><p>json = gson.toJson(form);</p><p> mockMvc.perform(post('/user')</p><p> .characterEncoding('UTF-8')</p><p> .contentType(MediaType.APPLICATION_JSON)</p> <p>.content(json.getBytes()))</p><p> .andExpect(status().is(HttpStatus.BAD_REQUEST.value()));</p>"
+    },
+    "database": {
+        "id":3,
+        "author":"学习学习",
+        "postTime":"2016-12-12 12:12:12",
+        "readTimes":999999,
+        "commentTimes":99999,
+        "title":"database",
+        "text":""
     }
    
 }

@@ -33,6 +33,7 @@
   <div class="row">
     <div class="col-sm-12">
       <p style="color:blue"><a href="https://angular.cn/resources/">angular的相关资源</a></p>
+      <p style="color:blue"><a href="https://segmentfault.com/a/1190000010900969">使用 Angular CLI 和 ng-packagr 构建一个标准的 Angular 组件库</a></p>
     </div>
   </div>
 </div>
@@ -188,6 +189,9 @@
     </div>
     <div class="col-sm-12">
       <p style="color:blue"><a href="https://www.cnblogs.com/tuojunjie/p/6210290.html">mybatis集成spring事务管理（上）</a><a href="https://www.cnblogs.com/xrq730/p/5454381.html">MyBatis6：MyBatis集成Spring事物管理（下篇）</a></p>
+      <p style="color:blue"><a href="http://blog.csdn.net/chenbaige/article/details/72568959">mybatis精通之路之TypeHandler</a></p>
+      <p style="color:blue"><a href="http://90haofang-163-com.iteye.com/blog/1904451">spring整合jmx</a></p>
+      <p style="color:blue"><a href="https://www.cnblogs.com/rollenholt/p/4202631.html">Spring Cache</a></p>
   </div>
   </div>
 </div>
@@ -300,7 +304,11 @@
     <div class="col-sm-12">
         <p style="color:blue">画图工具在线： <a href="https://d.x.x/#LUntitled%20Diagram.xml">Flowchart Maker & Online Diagram Software</a></p>
         <p style="color:blue"> <a href="https://www.tubiaoxiu.com/src/index.html#/app/charting_resource">图表秀</a></p>
-    </div>
+        <p style="color:blue">自动添加代码注释JAutoDoc插件 eclipse安装</p>
+        <p style="color:blue"><a href="https://www.cnblogs.com/gxbk629/p/4473569.html"> CAS 简介 && SSO</a></p>
+        <p style="color:blue"><a href="https://www.jianshu.com/p/67c9b84226cd">SpringMVC集成Swagger插件以及Swagger注解的简单使用</a></p>
+        <p style="color:blue">xmind、 mindManager画图工具</p>
+      </div>
   </div>
 </div>
 <!--designPattern start-->
@@ -444,7 +452,30 @@
 
   <div class="row">
     <div class="col-sm-12">
-        <p style="color:blue"></p>
+        <p style="color:blue"><a href="http://www.importnew.com/24288.html">Java单元测试之模拟利器（1）：Powermock介绍</a></p>
+    </div>
+  </div>
+</div>
+<!--database start-->
+<div class="post-detail-container" *ngIf=" title=='database' && article.database">
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>{{ article.database.title }}</h4>
+      <p>{{ article.database.author }} {{ article.database.postTime }} 点击：{{ article.database.readTimes }} 评论：{{ article.database.commentTimes
+        }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12" [innerHTML]="article.database.text">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+        <p style="color:blue">
+          <quill-editor [(ngModel)]="editorContent"
+[options]="editorOptions"></quill-editor>
+        </p>
     </div>
   </div>
 </div>
